@@ -1,0 +1,112 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #f8f9ff 0%, #e0bbE4 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+    padding-bottom: 2rem;
+}
+
+.header-title {
+    font-family: 'Playfair Display', serif;
+    letter-spacing: -0.5px;
+}
+
+.task-card {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-radius: 1.5rem;
+    overflow: hidden;
+}
+
+.task-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+.checkmark {
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    position: relative;
+}
+
+.checkmark.checked {
+    background-color: #5D3A9B;
+    border-color: #5D3A9B;
+    transform: scale(1.1);
+}
+
+.checkmark.checked::after {
+    content: "✓";
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.2);
+    font-weight: bold;
+}
+
+.delete-btn {
+    opacity: 0;
+    transform: translateX(20px) rotate(15deg);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.task-item:hover .delete-btn {
+    opacity: 1;
+    transform: translateX(0) rotate(0);
+}
+
+.pulse-bg {
+    background: radial-gradient(circle, rgba(149, 125, 173, 0.1) 0%, transparent 70%);
+}
+
+.input-focus:focus {
+    box-shadow: 0 0 0 4px rgba(149, 125, 173, 0.3);
+    border-color: #957DAD;
+    transform: scale(1.01);
+}
+
+.completed-text {
+    text-decoration: line-through;
+    color: #a0aec0;
+}
+
+.filter-btn {
+    transition: all 0.3s ease;
+    border-radius: 1.25rem;
+    padding: 0.5rem 1.25rem;
+    font-weight: 600;
+}
+
+.filter-btn.active {
+    background: linear-gradient(135deg, #5D3A9B, #957DAD);
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(93, 58, 155, 0.3);
+}
+
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(216, 180, 226, 0.2);
+    z-index: -1;
+    animation: float 15s infinite ease-in-out;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.5); border-radius: 10px; }
+::-webkit-scrollbar-thumb { background: linear-gradient(to bottom, #957DAD, #5D3A9B); border-radius: 10px; }
+
+@keyframes taskAppear {
+    0% { opacity: 0; transform: translateY(20px) scale(0.95); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.task-item { animation: taskAppear 0.5s ease-out forwards; }
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .header-title { font-size: 2.25rem !important; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
