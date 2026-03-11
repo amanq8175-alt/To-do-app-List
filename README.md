@@ -16,8 +16,7 @@ It allows users to quickly add and remove tasks to stay organized.
 * JavaScript
 
 ## 🌐 Live Demo
-
-https://sparkling-pegasus-191ad7.netlify.app/
+[To Do List](https://sparkling-pegasus-191ad7.netlify.app/)
 
 ## 👨‍💻 Author
 
