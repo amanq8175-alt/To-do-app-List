@@ -17,6 +17,7 @@ It allows users to quickly add and remove tasks to stay organized.
 
 ## 🌐 Live Demo
 
+https://sparkling-pegasus-191ad7.netlify.app/
 
 ## 👨‍💻 Author
 
