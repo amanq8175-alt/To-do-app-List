@@ -17,7 +17,7 @@ It allows users to quickly add and remove tasks to stay organized.
 
 ## 🌐 Live Demo
 
-https://lucent-entremet-e32f14.netlify.app/
+lucent-entremet-e32f14.netlify.app
 
 ## 👨‍💻 Author
 
